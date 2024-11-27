@@ -36,11 +36,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox_numOrder = new System.Windows.Forms.CheckBox();
+            this.checkBox_charOrder = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -101,35 +102,26 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "重命名文件";
             // 
-            // checkBox2
+            // checkBox_numOrder
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(1235, 68);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(101, 19);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "按数字前缀";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox_numOrder.AutoSize = true;
+            this.checkBox_numOrder.Location = new System.Drawing.Point(1235, 68);
+            this.checkBox_numOrder.Name = "checkBox_numOrder";
+            this.checkBox_numOrder.Size = new System.Drawing.Size(101, 19);
+            this.checkBox_numOrder.TabIndex = 10;
+            this.checkBox_numOrder.Text = "按数字前缀";
+            this.checkBox_numOrder.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBox_charOrder
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(1235, 114);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(101, 19);
-            this.checkBox3.TabIndex = 11;
-            this.checkBox3.Text = "按字母前缀";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(1235, 161);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(116, 19);
-            this.checkBox4.TabIndex = 12;
-            this.checkBox4.Text = "特殊字符替换";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox_charOrder.AutoSize = true;
+            this.checkBox_charOrder.Location = new System.Drawing.Point(1235, 114);
+            this.checkBox_charOrder.Name = "checkBox_charOrder";
+            this.checkBox_charOrder.Size = new System.Drawing.Size(101, 19);
+            this.checkBox_charOrder.TabIndex = 11;
+            this.checkBox_charOrder.Text = "按字母前缀";
+            this.checkBox_charOrder.UseVisualStyleBackColor = true;
+            this.checkBox_charOrder.CheckedChanged += new System.EventHandler(this.checkBox_charOrder_CheckedChanged);
             // 
             // label3
             // 
@@ -149,16 +141,48 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "新文件";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "!",
+            "@",
+            "#",
+            "$",
+            "%",
+            "^",
+            "&",
+            "*",
+            "(",
+            ")",
+            "-",
+            "=",
+            "空格"});
+            this.checkedListBox1.Location = new System.Drawing.Point(1238, 192);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(100, 238);
+            this.checkedListBox1.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1235, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "特殊字符删除";
+            // 
             // rename
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 674);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox_charOrder);
+            this.Controls.Add(this.checkBox_numOrder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -182,11 +206,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox_numOrder;
+        private System.Windows.Forms.CheckBox checkBox_charOrder;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

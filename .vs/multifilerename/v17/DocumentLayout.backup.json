@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\VisualStudioProjects\\multifilerename\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|e:\\visualstudioprojects\\multifilerename\\multifilerename\\renameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|E:\\VisualStudioProjects\\multifilerename\\multifilerename\\renameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|solutionrelative:multifilerename\\renameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|e:\\visualstudioprojects\\multifilerename\\multifilerename\\renameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|solutionrelative:multifilerename\\renameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|e:\\visualstudioprojects\\multifilerename\\multifilerename\\util\\separatedlistbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9945C62B-7CBA-40AD-A919-3C83DCFD0884}|multifilerename\\multifilerename.csproj|solutionrelative:multifilerename\\util\\separatedlistbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SeparatedListBox.cs",
+              "DocumentMoniker": "E:\\VisualStudioProjects\\multifilerename\\multifilerename\\util\\SeparatedListBox.cs",
+              "RelativeDocumentMoniker": "multifilerename\\util\\SeparatedListBox.cs",
+              "ToolTip": "E:\\VisualStudioProjects\\multifilerename\\multifilerename\\util\\SeparatedListBox.cs",
+              "RelativeToolTip": "multifilerename\\util\\SeparatedListBox.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T14:36:57.127Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +45,7 @@
               "RelativeDocumentMoniker": "multifilerename\\RenameForm.cs",
               "ToolTip": "E:\\VisualStudioProjects\\multifilerename\\multifilerename\\RenameForm.cs",
               "RelativeToolTip": "multifilerename\\RenameForm.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAuwDIAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAuwGkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T01:12:43.472Z",
               "EditorCaption": ""
