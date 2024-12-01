@@ -52,6 +52,9 @@ namespace multifilerename
 
                 // 隐藏btn1
                 button1.Visible = false;
+
+                // 默认数字前缀
+                this.checkBox_numOrder.Checked = true;
             }
         }
 
