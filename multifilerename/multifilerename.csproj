@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\RenameFile.cs" />
     <Compile Include="util\SeparatedListBox.cs">
       <SubType>Component</SubType>
     </Compile>
