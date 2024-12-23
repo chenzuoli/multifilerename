@@ -11,11 +11,15 @@ namespace multifilerename
     public partial class rename : Form
     {
         private FolderBrowserDialog folderBrowserDialog;
+        private int cate_id;
         public rename()
         {
             InitializeComponent();
             folderBrowserDialog = new FolderBrowserDialog();
             // checkBox_numOrder.Checked = true;
+            // 默认重命名文件
+            this.rename_file.BorderStyle = BorderStyle.Fixed3D;
+            cate_id = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,29 +31,32 @@ namespace multifilerename
                 listBox1.Items.Clear();
                 listBox3.Items.Clear();
 
-                string[] files = Directory.GetFiles(folderBrowserDialog.SelectedPath);
-                //listBox1.Items.AddRange(files);
-
-                // 列出所有更改后的文件名，按照顺序一次在文件前新增数字序号
-                for (int i = 0; i < files.Length; i++)
+                if (this.cate_id == 0)
                 {
-                    String fileDirectory= Path.GetDirectoryName(files[i]);
-                    String fileName = Path.GetFileName(files[i]);
-                    // String newFileName = (i + 1) + "_" + fileName;
-                    // String newFilePath = Path.Combine(fileDirectory, newFileName);
-                    //listBox3.Items.Add(newFilePath);
-                    listBox1.Items.Add(fileName);
-                    listBox3.Items.Add(fileName);
-                    //listBox1.Items.Add("-----------------------------------------------------------------");
-                    //listBox3.Items.Add("-----------------------------------------------------------------");
+                    string[] files = Directory.GetFiles(folderBrowserDialog.SelectedPath);
+                    // 列出所有更改后的文件名，按照顺序一次在文件前新增数字序号
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        String fileName = Path.GetFileName(files[i]);
+                        listBox1.Items.Add(fileName);
+                        listBox3.Items.Add(fileName);
+                    }
+                } else if (this.cate_id == 1)
+                {
+                    string[] dirs = Directory.GetDirectories(folderBrowserDialog.SelectedPath);
+                    for (int i = 0; i < dirs.Length; i++)
+                    {
+                        DirectoryInfo dirInfo = new DirectoryInfo(dirs[i]);
+                        listBox1.Items.Add(dirInfo.Name);
+                        listBox3.Items.Add(dirInfo.Name);
+                    }
                 }
-                button3.Enabled = true;
+
+                confirmRenameBtn.Enabled = true;
 
                 // 隐藏btn1
-                button1.Visible = false;
+                choose_btn.Visible = false;
 
-                // 默认数字前缀
-                // this.checkBox_numOrder.Checked = true;
             }
         }
 
@@ -199,28 +206,34 @@ namespace multifilerename
                 for (int i = 0; i < listBox1.Items.Count; i++)
                 {
                     // 如果目标文件存在，则删除
-                    string fileOriPath = Path.Combine(folderBrowserDialog.SelectedPath, listBox1.Items[i].ToString());
-                    string fileAbsPath = Path.Combine(folderBrowserDialog.SelectedPath, listBox3.Items[i].ToString());
-                    Console.WriteLine(fileOriPath);
-                    Console.WriteLine(fileAbsPath);
+                    string originalPath = Path.Combine(folderBrowserDialog.SelectedPath, listBox1.Items[i].ToString());
+                    string targetPath = Path.Combine(folderBrowserDialog.SelectedPath, listBox3.Items[i].ToString());
+                    Console.WriteLine(originalPath);
+                    Console.WriteLine(targetPath);
 
                     // 如果删除目标文件，当文件名没有更改时，会把源文件删除
                     //MessageBox.Show(fileOriPath + fileAbsPath);
-                    //if (File.Exists(fileAbsPath))
+                    //if (File.Exists(originalPath))
                     //{
-                    //    File.Delete(fileAbsPath);
+                    //    File.Delete(targetPath);
                     //}
 
                     // move
-                    if (fileOriPath != fileAbsPath)
+                    if (originalPath != targetPath)
                     {
-                        File.Move(fileOriPath, fileAbsPath);
+                        if (this.cate_id == 0)
+                        {
+                            File.Move(originalPath, targetPath);
+                        } else if (this.cate_id == 1)
+                        {
+                            Directory.Move(originalPath, targetPath);
+                        }
                     }
                 }
                 MessageBox.Show("修改成功。");
 
                 // 将修改置为失效，直到重新选择了文件夹
-                button3.Enabled = false;
+                confirmRenameBtn.Enabled = false;
 
                 // 使用记录
                 // string lezhisoft_statistic_url = "http://localhost:5000/admin/batch_rename";
@@ -248,9 +261,47 @@ namespace multifilerename
             // 选择重命名文件 
             this.listBox1.Items.Clear();
             this.listBox3.Items.Clear();
-            this.button1.Visible = true;
+            this.choose_btn.Visible = true;
             this.rename_file.BorderStyle = BorderStyle.Fixed3D;
+            this.rename_folder.BorderStyle = BorderStyle.None;
+            clearRule();
+            this.cate_id = 0;
         }
+
+        private void renamefolder_Click(object sender, EventArgs e)
+        {
+            // 重命名文件夹点击事件
+            this.listBox1.Items.Clear();
+            this.listBox3.Items.Clear();
+            this.choose_btn.Visible = true;
+            this.rename_file.BorderStyle = BorderStyle.None;
+            this.rename_folder.BorderStyle = BorderStyle.Fixed3D;
+            clearRule();
+            this.cate_id = 1;
+        }
+
+        private void delete_cate_Click(object sender, EventArgs e)
+        {
+            // 重命名文件夹点击事件
+            this.listBox1.Items.Clear();
+            this.listBox3.Items.Clear();
+            this.choose_btn.Visible = true;
+            this.rename_file.BorderStyle = BorderStyle.None;
+            this.rename_folder.BorderStyle = BorderStyle.None;
+            clearRule();
+            this.cate_id = 2;
+        }
+
+        private void clearRule()
+        {
+            this.checkBox_numOrder.Checked = false;
+            this.checkBox_charOrder.Checked = false;
+            this.customPrefixBox.Text = string.Empty;
+            this.checkBox_numOrderSubfix.Checked = false;
+            this.checkBox_charOrderSubfix.Checked = false;
+            this.customSubfixBox.Text = string.Empty;
+        }
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -367,9 +418,5 @@ namespace multifilerename
             //}
         }
 
-        private void renamefolder_Click(object sender, EventArgs e)
-        {
-            // 重命名文件夹点击事件
-        }
     }
 }

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rename));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.choose_btn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.confirmRenameBtn = new System.Windows.Forms.Button();
             this.rename_file = new System.Windows.Forms.Label();
             this.checkBox_numOrder = new System.Windows.Forms.CheckBox();
             this.checkBox_charOrder = new System.Windows.Forms.CheckBox();
@@ -52,19 +52,18 @@
             this.checkBox_charOrderSubfix = new System.Windows.Forms.CheckBox();
             this.checkBox_numOrderSubfix = new System.Windows.Forms.CheckBox();
             this.rename_folder = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // choose_btn
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Location = new System.Drawing.Point(242, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "选择文件夹";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.choose_btn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.choose_btn.Location = new System.Drawing.Point(242, 320);
+            this.choose_btn.Name = "choose_btn";
+            this.choose_btn.Size = new System.Drawing.Size(103, 23);
+            this.choose_btn.TabIndex = 0;
+            this.choose_btn.Text = "选择文件夹";
+            this.choose_btn.UseVisualStyleBackColor = false;
+            this.choose_btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
@@ -85,16 +84,16 @@
             this.listBox3.Size = new System.Drawing.Size(507, 522);
             this.listBox3.TabIndex = 3;
             // 
-            // button3
+            // confirmRenameBtn
             // 
-            this.button3.Font = new System.Drawing.Font("宋体", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(1135, 613);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(210, 49);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "确认修改";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.confirmRenameBtn.Font = new System.Drawing.Font("宋体", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.confirmRenameBtn.Location = new System.Drawing.Point(1135, 613);
+            this.confirmRenameBtn.Name = "confirmRenameBtn";
+            this.confirmRenameBtn.Size = new System.Drawing.Size(210, 49);
+            this.confirmRenameBtn.TabIndex = 4;
+            this.confirmRenameBtn.Text = "确认修改";
+            this.confirmRenameBtn.UseVisualStyleBackColor = true;
+            this.confirmRenameBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // rename_file
             // 
@@ -173,7 +172,7 @@
             this.rechoose_btn.Font = new System.Drawing.Font("宋体", 8.765218F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rechoose_btn.Location = new System.Drawing.Point(35, 626);
             this.rechoose_btn.Name = "rechoose_btn";
-            this.rechoose_btn.Size = new System.Drawing.Size(125, 23);
+            this.rechoose_btn.Size = new System.Drawing.Size(146, 23);
             this.rechoose_btn.TabIndex = 18;
             this.rechoose_btn.Text = "重新选择文件夹";
             this.rechoose_btn.UseVisualStyleBackColor = true;
@@ -273,24 +272,11 @@
             this.rename_folder.Text = "重命名文件夹";
             this.rename_folder.Click += new System.EventHandler(this.renamefolder_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("宋体", 8.765218F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(290, 20);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(2);
-            this.label6.Size = new System.Drawing.Size(77, 21);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "批量删除";
-            // 
             // rename
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 674);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.rename_folder);
             this.Controls.Add(this.checkBox_charOrderSubfix);
             this.Controls.Add(this.checkBox_numOrderSubfix);
@@ -309,8 +295,8 @@
             this.Controls.Add(this.checkBox_charOrder);
             this.Controls.Add(this.checkBox_numOrder);
             this.Controls.Add(this.rename_file);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.choose_btn);
+            this.Controls.Add(this.confirmRenameBtn);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -324,10 +310,10 @@
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button choose_btn;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button confirmRenameBtn;
         private System.Windows.Forms.Label rename_file;
         private System.Windows.Forms.CheckBox checkBox_numOrder;
         private System.Windows.Forms.CheckBox checkBox_charOrder;
@@ -346,7 +332,6 @@
         private System.Windows.Forms.CheckBox checkBox_charOrderSubfix;
         private System.Windows.Forms.CheckBox checkBox_numOrderSubfix;
         private System.Windows.Forms.Label rename_folder;
-        private System.Windows.Forms.Label label6;
     }
 }
 
