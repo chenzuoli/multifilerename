@@ -8,3 +8,7 @@ E:\VisualStudioProjects\multifilerename\multifilerename\obj\Debug\multifilerenam
 E:\VisualStudioProjects\multifilerename\multifilerename\obj\Debug\multifilerename.csproj.CoreCompileInputs.cache
 E:\VisualStudioProjects\multifilerename\multifilerename\obj\Debug\multifilerename.exe
 E:\VisualStudioProjects\multifilerename\multifilerename\obj\Debug\multifilerename.pdb
+E:\VisualStudioProjects\multifilerename\multifilerename\bin\Debug\Newtonsoft.Json.dll
+E:\VisualStudioProjects\multifilerename\multifilerename\bin\Debug\Newtonsoft.Json.xml
+E:\VisualStudioProjects\multifilerename\multifilerename\obj\Debug\multifilerename.FeedbackForm.resources
+E:\VisualStudioProjects\multifilerename\multifilerename\obj\Debug\multifil.2702520F.Up2Date

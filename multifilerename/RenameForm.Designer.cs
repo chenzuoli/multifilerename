@@ -52,6 +52,7 @@
             this.checkBox_charOrderSubfix = new System.Windows.Forms.CheckBox();
             this.checkBox_numOrderSubfix = new System.Windows.Forms.CheckBox();
             this.rename_folder = new System.Windows.Forms.Label();
+            this.helpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // choose_btn
@@ -272,11 +273,25 @@
             this.rename_folder.Text = "重命名文件夹";
             this.rename_folder.Click += new System.EventHandler(this.renamefolder_Click);
             // 
+            // helpLabel
+            // 
+            this.helpLabel.AutoSize = true;
+            this.helpLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.helpLabel.Font = new System.Drawing.Font("宋体", 8.765218F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.helpLabel.Location = new System.Drawing.Point(1288, 26);
+            this.helpLabel.Name = "helpLabel";
+            this.helpLabel.Padding = new System.Windows.Forms.Padding(2);
+            this.helpLabel.Size = new System.Drawing.Size(63, 21);
+            this.helpLabel.TabIndex = 29;
+            this.helpLabel.Text = "反馈 ?";
+            this.helpLabel.Click += new System.EventHandler(this.helpLabel_Click);
+            // 
             // rename
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 674);
+            this.Controls.Add(this.helpLabel);
             this.Controls.Add(this.rename_folder);
             this.Controls.Add(this.checkBox_charOrderSubfix);
             this.Controls.Add(this.checkBox_numOrderSubfix);
@@ -332,6 +347,7 @@
         private System.Windows.Forms.CheckBox checkBox_charOrderSubfix;
         private System.Windows.Forms.CheckBox checkBox_numOrderSubfix;
         private System.Windows.Forms.Label rename_folder;
+        private System.Windows.Forms.Label helpLabel;
     }
 }
 

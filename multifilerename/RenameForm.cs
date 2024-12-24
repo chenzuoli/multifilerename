@@ -418,5 +418,10 @@ namespace multifilerename
             //}
         }
 
+        private void helpLabel_Click(object sender, EventArgs e)
+        {
+            FeedbackForm feedbackForm = new FeedbackForm();
+            feedbackForm.ShowDialog();
+        }
     }
 }
